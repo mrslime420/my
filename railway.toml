@@ -1,0 +1,13 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "python main.py --auto"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+# ✅ VOLUME - YAHI SE DATA PERMANENT HOGA
+[[volumes]]
+mountPath = "/data/sms_data"
+name = "sms_data"
